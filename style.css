@@ -1,1 +1,50 @@
+const music = document.getElementById("birthdayMusic");
+const musicBtn = document.getElementById("musicBtn");
 
+function startParty() {
+
+    music.play();
+
+    musicBtn.innerHTML = "🎵 Music Playing ❤️";
+
+    createConfetti();
+
+    // More confetti after a short delay
+    setTimeout(createConfetti, 1200);
+    setTimeout(createConfetti, 2500);
+}
+
+function createConfetti() {
+
+    const container = document.getElementById("confetti");
+
+    for (let i = 0; i < 80; i++) {
+
+        const piece = document.createElement("div");
+
+        piece.classList.add("confetti");
+
+        piece.style.left = Math.random() * 100 + "vw";
+
+        piece.style.animationDuration =
+            (Math.random() * 3 + 2) + "s";
+
+        piece.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        piece.style.transform =
+            `rotate(${Math.random() * 360}deg)`;
+
+        piece.style.background =
+            `hsl(${Math.random() * 360}, 100%, 70%)`;
+
+        container.appendChild(piece);
+
+        setTimeout(() => {
+            piece.remove();
+        }, 6000);
+    }
+}
+
+// Automatically create a small amount of confetti
+setTimeout(createConfetti, 1000);
