@@ -1,112 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Amna ❤️</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Amna ❤️</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Floating Balloons -->
-    <div class="balloons">
-        <div class="balloon b1">🎈</div>
-        <div class="balloon b2">🎈</div>
-        <div class="balloon b3">🎈</div>
-        <div class="balloon b4">🎈</div>
-        <div class="balloon b5">🎈</div>
-        <div class="balloon b6">🎈</div>
-    </div>
+<div id="stars"></div>
+<div id="balloons"></div>
+<div id="confetti"></div>
 
-    <!-- Confetti -->
-    <div id="confetti"></div>
+<div class="intro" id="intro">
+    <div class="gift">🎁</div>
+    <h1>A Special Surprise</h1>
+    <p>Made especially for</p>
+    <h2>AMNA ❤️</h2>
+    <button onclick="openSurprise()">OPEN YOUR SURPRISE ✨</button>
+</div>
 
-    <main class="container">
+<div class="main" id="main">
 
-        <div class="small-text">A little surprise for someone very special...</div>
+    <p class="top">TODAY IS ALL ABOUT YOU ✨</p>
 
-        <h1>
-            HAPPY<br>
-            <span>BIRTHDAY</span>
-        </h1>
+    <h1 class="birthday">
+        HAPPY<br>
+        <span>BIRTHDAY</span>
+    </h1>
 
-        <h2>🎀 AMNA 🎀</h2>
+    <h2 class="name">AMNA</h2>
 
-        <!-- Cake -->
-        <div class="cake-area">
-            <div class="cake">
-                <div class="candles">
-                    <div class="candle">
-                        <div class="flame"></div>
-                    </div>
-
-                    <div class="candle">
-                        <div class="flame"></div>
-                    </div>
-
-                    <div class="candle">
-                        <div class="flame"></div>
-                    </div>
-                </div>
-
-                <div class="icing"></div>
-                <div class="cake-top">🍓 🍓 🍓</div>
-                <div class="cake-body"></div>
-                <div class="cake-bottom"></div>
-            </div>
+    <div class="cake">
+        <div class="candles">
+            <div class="candle"><i></i></div>
+            <div class="candle"><i></i></div>
+            <div class="candle"><i></i></div>
         </div>
 
-        <button id="musicBtn" onclick="startParty()">
-            🎵 Play Your Birthday Music
-        </button>
+        <div class="cream"></div>
+        <div class="cakeTop">🍓 🍓 🍓</div>
+        <div class="cakeBody"></div>
+        <div class="cakeBottom"></div>
+    </div>
 
-        <section class="message">
-            <p>
-                Dear Amna ❤️
-            </p>
+    <button class="celebrate" onclick="celebrate()">
+        🎉 CELEBRATE AMNA 🎉
+    </button>
 
-            <p>
-                Today is your special day, so obviously the world
-                has to tolerate a little extra drama from you. 😂
-            </p>
+    <div class="card">
+        <div class="cardHeart">❤️</div>
 
-            <p>
-                But jokes apart, you are one of those people whose
-                presence makes ordinary moments feel special.
-            </p>
+        <h2>Dear Amna,</h2>
 
-            <p>
-                I hope your life is always filled with happiness,
-                beautiful memories, success, and people who genuinely
-                love and care for you.
-            </p>
+        <p>
+            Another year older... but don't worry,
+            we won't tell anyone your real age. 😂
+        </p>
 
-            <p class="love">
-                Stay happy, keep smiling, and please don't become
-                too serious after getting older. 😭😂
-            </p>
+        <p>
+            Life becomes more beautiful when there are people
+            who bring laughter, warmth and unforgettable memories.
+            And honestly, you're one of those people.
+        </p>
 
-            <p class="final">
-                Happy Birthday, Amna! 🎂❤️
-                <br>
-                May every beautiful wish in your heart come true.
-            </p>
-        </section>
+        <p>
+            May your smile always be bigger than your problems,
+            your happiness louder than your worries,
+            and your dreams bigger than your fears.
+        </p>
 
-        <div class="heart">❤️</div>
+        <p class="funny">
+            And please remember... getting older is compulsory,
+            but growing up is completely optional. 😂❤️
+        </p>
 
-        <footer>
-            Made with ❤️ especially for Amna
-        </footer>
+        <h3>
+            Happy Birthday, Amna! 🎂❤️
+        </h3>
 
-    </main>
+        <p class="wish">
+            May Allah fill your life with endless happiness,
+            success, love and beautiful moments.
+        </p>
+    </div>
 
-    <audio id="birthdayMusic" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
+    <div class="final">
+        <span>✨</span>
+        <h2>You Are Special</h2>
+        <p>Never forget that. ❤️</p>
+        <span>✨</span>
+    </div>
 
-    <script src="script.js"></script>
+    <footer>
+        Made with ❤️ for Amna
+    </footer>
 
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
