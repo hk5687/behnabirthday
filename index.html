@@ -3,54 +3,414 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Birthday Amna ❤️</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    font-family:Georgia,serif;
+    color:white;
+    text-align:center;
+    background:
+    radial-gradient(circle at 50% 20%,#632778,#1b0b30 55%,#05030b);
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+    background-size:45px 45px;
+    opacity:.25;
+    pointer-events:none;
+}
+
+#intro{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+    position:relative;
+    z-index:10;
+    transition:1s;
+}
+
+#intro.hide{
+    opacity:0;
+    transform:scale(1.5);
+}
+
+.gift{
+    font-size:110px;
+    animation:float 2s infinite;
+    filter:drop-shadow(0 0 25px #ff5ed0);
+}
+
+#intro h1{
+    font-size:clamp(35px,8vw,65px);
+    margin-top:20px;
+    text-shadow:0 0 25px #ff4dce;
+}
+
+#intro p{
+    margin:15px;
+    font-size:18px;
+    opacity:.75;
+}
+
+#intro h2{
+    font-size:clamp(45px,10vw,80px);
+    color:#ffd8f1;
+    text-shadow:0 0 30px #ff3fc4;
+}
+
+button{
+    margin-top:30px;
+    padding:17px 32px;
+    border:none;
+    border-radius:50px;
+    color:white;
+    background:linear-gradient(135deg,#ff43ae,#8c48ff);
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 30px rgba(255,60,190,.6);
+}
+
+button:active{
+    transform:scale(.95);
+}
+
+#main{
+    display:none;
+    position:relative;
+    z-index:5;
+    padding:60px 20px;
+}
+
+#main.show{
+    display:block;
+    animation:appear 1.5s ease;
+}
+
+.top{
+    letter-spacing:5px;
+    font-size:14px;
+    opacity:.7;
+}
+
+.birthday{
+    margin-top:25px;
+    font-family:Arial,sans-serif;
+    font-size:clamp(65px,15vw,150px);
+    line-height:.8;
+    font-weight:900;
+    letter-spacing:4px;
+    text-shadow:
+    0 0 10px white,
+    0 0 30px #ff4bd0,
+    0 0 70px #ff1493;
+    animation:glow 1.5s infinite alternate;
+}
+
+.birthday span{
+    font-size:.72em;
+}
+
+.name{
+    margin-top:25px;
+    font-family:Arial,sans-serif;
+    font-size:clamp(45px,10vw,80px);
+    letter-spacing:8px;
+    color:#ffd5ef;
+    text-shadow:0 0 30px #ff3dbd;
+}
+
+.cake{
+    width:250px;
+    height:250px;
+    margin:45px auto 5px;
+    position:relative;
+}
+
+.cakeBody{
+    position:absolute;
+    bottom:35px;
+    width:250px;
+    height:95px;
+    border-radius:18px;
+    background:linear-gradient(#ff9dcc,#d94b94);
+    box-shadow:0 15px 40px rgba(255,70,180,.4);
+}
+
+.cakeBottom{
+    position:absolute;
+    bottom:15px;
+    width:250px;
+    height:35px;
+    background:#ffd5ed;
+    border-radius:0 0 18px 18px;
+}
+
+.cream{
+    position:absolute;
+    bottom:110px;
+    width:250px;
+    height:55px;
+    background:#fff3fb;
+    border-radius:50%;
+}
+
+.cakeTop{
+    position:absolute;
+    bottom:125px;
+    width:100%;
+    z-index:3;
+    font-size:20px;
+}
+
+.candles{
+    position:absolute;
+    bottom:160px;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:32px;
+    z-index:5;
+}
+
+.candle{
+    width:14px;
+    height:60px;
+    background:repeating-linear-gradient(
+        45deg,
+        white 0 8px,
+        #ff4e9f 8px 16px
+    );
+    border-radius:5px;
+}
+
+.flame{
+    display:block;
+    width:18px;
+    height:25px;
+    background:#ffd43b;
+    border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);
+    margin-left:-2px;
+    margin-top:-23px;
+    box-shadow:0 0 15px #ff9d00,0 0 30px #ff5e00;
+    animation:flame .5s infinite alternate;
+}
+
+.card{
+    max-width:720px;
+    margin:45px auto;
+    padding:40px 30px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(15px);
+    line-height:1.9;
+    font-size:17px;
+    box-shadow:0 20px 70px rgba(0,0,0,.35);
+}
+
+.card h2{
+    color:#ffd0ed;
+    font-size:32px;
+    margin:15px;
+}
+
+.card p{
+    margin:20px 0;
+}
+
+.heart{
+    font-size:50px;
+    animation:heart 1s infinite;
+}
+
+.funny{
+    color:#ffb9df;
+    font-style:italic;
+}
+
+.card h3{
+    font-size:28px;
+    color:#fff;
+}
+
+.final{
+    margin:70px auto 30px;
+}
+
+.final h2{
+    font-size:42px;
+    text-shadow:0 0 25px #ff4fca;
+}
+
+footer{
+    opacity:.5;
+    padding-bottom:30px;
+}
+
+.balloon{
+    position:fixed;
+    bottom:-100px;
+    font-size:60px;
+    z-index:3;
+    animation:fly 10s linear forwards;
+}
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    width:9px;
+    height:16px;
+    z-index:30;
+    animation:fall 4s linear forwards;
+}
+
+@keyframes float{
+    50%{transform:translateY(-20px) rotate(4deg)}
+}
+
+@keyframes appear{
+    from{opacity:0;transform:scale(.7)}
+    to{opacity:1;transform:scale(1)}
+}
+
+@keyframes glow{
+    from{transform:scale(1)}
+    to{transform:scale(1.04)}
+}
+
+@keyframes flame{
+    to{transform:rotate(-38deg) scale(1.15)}
+}
+
+@keyframes heart{
+    50%{transform:scale(1.25)}
+}
+
+@keyframes fly{
+    to{transform:translateY(-120vh) rotate(500deg)}
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:600px){
+    .card{
+        padding:30px 20px;
+        font-size:16px;
+    }
+
+    .cake{
+        transform:scale(.85);
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<div id="stars"></div>
-<div id="balloons"></div>
-<div id="confetti"></div>
+<!-- OPENING -->
+<div id="intro">
 
-<div class="intro" id="intro">
     <div class="gift">🎁</div>
+
     <h1>A Special Surprise</h1>
+
     <p>Made especially for</p>
+
     <h2>AMNA ❤️</h2>
-    <button onclick="openSurprise()">OPEN YOUR SURPRISE ✨</button>
+
+    <button onclick="openSurprise()">
+        OPEN YOUR SURPRISE ✨
+    </button>
+
 </div>
 
-<div class="main" id="main">
 
-    <p class="top">TODAY IS ALL ABOUT YOU ✨</p>
+<!-- BIRTHDAY PAGE -->
+<div id="main">
 
-    <h1 class="birthday">
+    <div class="top">
+        TODAY IS ALL ABOUT YOU ✨
+    </div>
+
+    <div class="birthday">
         HAPPY<br>
         <span>BIRTHDAY</span>
-    </h1>
+    </div>
 
-    <h2 class="name">AMNA</h2>
+    <div class="name">
+        AMNA
+    </div>
 
+
+    <!-- CAKE -->
     <div class="cake">
+
         <div class="candles">
-            <div class="candle"><i></i></div>
-            <div class="candle"><i></i></div>
-            <div class="candle"><i></i></div>
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
         </div>
 
         <div class="cream"></div>
-        <div class="cakeTop">🍓 🍓 🍓</div>
+
+        <div class="cakeTop">
+            🍓 🍓 🍓
+        </div>
+
         <div class="cakeBody"></div>
+
         <div class="cakeBottom"></div>
+
     </div>
 
-    <button class="celebrate" onclick="celebrate()">
+
+    <button onclick="celebrate()">
         🎉 CELEBRATE AMNA 🎉
     </button>
 
+
+    <!-- MESSAGE -->
     <div class="card">
-        <div class="cardHeart">❤️</div>
+
+        <div class="heart">
+            ❤️
+        </div>
 
         <h2>Dear Amna,</h2>
 
@@ -60,19 +420,20 @@
         </p>
 
         <p>
-            Life becomes more beautiful when there are people
-            who bring laughter, warmth and unforgettable memories.
-            And honestly, you're one of those people.
+            Life becomes more beautiful when there are
+            people who bring laughter, warmth and
+            unforgettable memories.
         </p>
 
         <p>
-            May your smile always be bigger than your problems,
-            your happiness louder than your worries,
-            and your dreams bigger than your fears.
+            And honestly, you're one of those people.
+            May your smile always be bigger than your
+            problems and your happiness louder than
+            your worries.
         </p>
 
         <p class="funny">
-            And please remember... getting older is compulsory,
+            And remember... getting older is compulsory,
             but growing up is completely optional. 😂❤️
         </p>
 
@@ -80,25 +441,128 @@
             Happy Birthday, Amna! 🎂❤️
         </h3>
 
-        <p class="wish">
+        <p>
             May Allah fill your life with endless happiness,
             success, love and beautiful moments.
         </p>
+
     </div>
+
 
     <div class="final">
-        <span>✨</span>
-        <h2>You Are Special</h2>
-        <p>Never forget that. ❤️</p>
-        <span>✨</span>
+
+        ✨
+
+        <h2>
+            You Are Special
+        </h2>
+
+        <p>
+            Never forget that. ❤️
+        </p>
+
+        ✨
+
     </div>
 
+
     <footer>
-        Made with ❤️ for Amna
+        Made with ❤️ especially for Amna
     </footer>
 
 </div>
 
-<script src="script.js"></script>
+
+<script>
+
+function openSurprise(){
+
+    console.log("Surprise opened!");
+
+    document.getElementById("intro").classList.add("hide");
+
+    setTimeout(function(){
+
+        document.getElementById("intro").style.display="none";
+
+        document.getElementById("main").classList.add("show");
+
+        createBalloons();
+
+        createConfetti();
+
+    },1000);
+
+}
+
+
+function celebrate(){
+
+    createBalloons();
+
+    createConfetti();
+
+    createConfetti();
+
+}
+
+
+function createBalloons(){
+
+    for(let i=0;i<12;i++){
+
+        let balloon=document.createElement("div");
+
+        balloon.className="balloon";
+
+        balloon.innerHTML="🎈";
+
+        balloon.style.left=Math.random()*95+"vw";
+
+        balloon.style.animationDuration=
+            (7+Math.random()*6)+"s";
+
+        balloon.style.animationDelay=
+            Math.random()*2+"s";
+
+        document.body.appendChild(balloon);
+
+        setTimeout(function(){
+            balloon.remove();
+        },15000);
+
+    }
+
+}
+
+
+function createConfetti(){
+
+    for(let i=0;i<120;i++){
+
+        let piece=document.createElement("div");
+
+        piece.className="confetti";
+
+        piece.style.left=Math.random()*100+"vw";
+
+        piece.style.background=
+            "hsl("+Math.random()*360+",100%,70%)";
+
+        piece.style.animationDelay=
+            Math.random()*1.5+"s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(function(){
+            piece.remove();
+        },6000);
+
+    }
+
+}
+
+</script>
+
 </body>
 </html>
